@@ -66,4 +66,6 @@ The action reads a few env variables:
 * `NO_DEFAULT_FEEDS` disable adding the default SDK feeds
 * `NO_REFRESH_CHECK` disable check if patches need a refresh.
 * `NO_SHFMT_CHECK` disable check if init files are formated
+* `SKIP_KMODS` set to `1` disables packaging of target-specific kernel modules.
+  Default is `0`.
 * `V` changes the build verbosity level.

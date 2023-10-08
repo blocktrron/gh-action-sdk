@@ -31,6 +31,12 @@ ALL_CUSTOM_FEEDS+="$FEEDNAME"
 cat feeds.conf
 
 ./scripts/feeds update -a > /dev/null
+
+if [ "$SKIP_KMODS" = '1' ]; then
+	echo "# CONFIG_ALL_NONSHARED is not set" > .config
+	echo "# CONFIG_ALL_KMODS is not set" >> .config
+fi
+
 make defconfig > /dev/null
 
 if [ -z "$PACKAGES" ]; then
