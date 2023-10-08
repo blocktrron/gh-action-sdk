@@ -35,9 +35,12 @@ cat feeds.conf
 if [ "$SKIP_KMODS" = '1' ]; then
 	echo "# CONFIG_ALL_NONSHARED is not set" > .config
 	echo "# CONFIG_ALL_KMODS is not set" >> .config
+	echo "Skipping kmods"
 fi
 
 make defconfig > /dev/null
+
+cat .config
 
 if [ -z "$PACKAGES" ]; then
 	# compile all packages in feed
