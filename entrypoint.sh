@@ -71,6 +71,8 @@ if [ -z "$PACKAGES" ]; then
 		CONFIG_SIGNED_PACKAGES="$CONFIG_SIGNED_PACKAGES" \
 		IGNORE_ERRORS="$IGNORE_ERRORS" \
 		CONFIG_AUTOREMOVE=y \
+		CONFIG_NO_STRIP=y \
+		CONFIG_DEBUG=y \
 		V="$V" \
 		-j "$(nproc)" || RET=$?
 else
@@ -165,6 +167,8 @@ else
 			BUILD_LOG="$BUILD_LOG" \
 			IGNORE_ERRORS="$IGNORE_ERRORS" \
 			CONFIG_AUTOREMOVE=y \
+			CONFIG_NO_STRIP=y \
+			CONFIG_DEBUG=y \
 			V="$V" \
 			-j "$(nproc)" \
 			"package/$PKG/compile" || {
